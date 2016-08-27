@@ -2,7 +2,6 @@
     version="1.0"
     encoding="UTF-8"?>
 
-<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,26 +9,11 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-=======
-    -<RelativeLayout
-    android:padding="0dp"
-    android:background="#ff8c00"
-    tools:context="com.vnsilva.mycalculator.Calculator"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    tools:context="com.basiccalc.mybasiccalc.BasicCalC">
 
     <TextView
         android:background="#ffffff"
-<<<<<<< HEAD
         android:layout_height="50dp"
         android:layout_width="fill_parent"
         android:maxLength="999"
@@ -62,20 +46,6 @@
         android:layout_marginBottom="0dp"
         android:layout_marginTop="50dp" />
 
-=======
-        android:layout_height="207dp"
-        android:layout_width="fill_parent"
-        android:maxLength="17"
-        android:maxLines="2"
-        android:nestedScrollingEnabled="false"
-        android:textSize="70sp"
-        android:gravity="bottom|right"
-        android:layout_margin="0dp"
-        android:id="@+id/textView"
-        android:text="0"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
     <Button
         android:background="#4d4d4d"
         android:layout_height="90dp"
@@ -86,7 +56,6 @@
         android:maxWidth="90dp"
         android:onClick="onClickNumber"
         android:textColor="#ffffff"
-<<<<<<< HEAD
         android:layout_alignStart="@+id/viewNum"
         android:layout_alignLeft="@+id/viewNum"
         android:layout_below="@+id/viewNum"/>
@@ -118,48 +87,12 @@
         android:layout_below="@+id/viewNum"
         android:layout_toEndOf="@+id/btn8"
         android:layout_toRightOf="@+id/btn8"/>
-=======
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_below="@+id/textView"/>
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
 
     <Button
         android:background="#4d4d4d"
         android:layout_height="90dp"
         android:layout_width="90dp"
         android:textSize="30sp"
-<<<<<<< HEAD
-=======
-        android:id="@+id/btn8"
-        android:text="8"
-        android:maxWidth="90dp"
-        android:onClick="onClickNumber"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/btn7"
-        android:layout_toRightOf="@+id/btn7"/>
-
-    <Button
-        android:background="#4d4d4d"
-        android:layout_height="90dp"
-        android:layout_width="90dp"
-        android:textSize="30sp"
-        android:id="@+id/btn9"
-        android:text="9"
-        android:maxWidth="90dp"
-        android:onClick="onClickNumber"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/btn8"
-        android:layout_toRightOf="@+id/btn8"/>
-
-    <Button
-        android:background="#4d4d4d"
-        android:layout_height="90dp"
-        android:layout_width="90dp"
-        android:textSize="30sp"
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
         android:id="@+id/btn4"
         android:text="4"
         android:onClick="onClickNumber"
@@ -240,16 +173,11 @@
         android:textSize="30sp"
         android:id="@+id/btnClear"
         android:text="C"
-<<<<<<< HEAD
         android:onClick="onClickOperator"
-=======
-        android:onClick="onClickClear"
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
         android:textColor="#ffffff"
         android:layout_alignStart="@+id/btn1"
         android:layout_alignLeft="@+id/btn1"
         android:layout_below="@+id/btn1"/>
-<<<<<<< HEAD
 
     <Button
         android:background="#4d4d4d"
@@ -302,79 +230,17 @@
         android:textColor="#ffffff"
         android:layout_below="@+id/btnAdd"
         android:layout_toRightOf="@+id/btn9"/>
-=======
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
 
     <Button
         android:background="#4d4d4d"
         android:layout_height="90dp"
         android:layout_width="90dp"
         android:textSize="30sp"
-<<<<<<< HEAD
         android:id="@+id/btnMul"
         android:text="x"
         android:onClick="onClickOperator"
         android:textColor="#ffffff"
         android:layout_below="@+id/btnSub"
-=======
-        android:id="@+id/btn0"
-        android:text="0"
-        android:onClick="onClickNumber"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/btn2"
-        android:layout_toEndOf="@+id/btn1"
-        android:layout_toRightOf="@+id/btn1"/>
-
-    <Button
-        android:background="#4d4d4d"
-        android:layout_height="90dp"
-        android:layout_width="90dp"
-        android:textSize="30sp"
-        android:id="@+id/btnEqual"
-        android:text="="
-        android:onClick="onClickEqual"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/btn3"
-        android:layout_toEndOf="@+id/btn0"
-        android:layout_toRightOf="@+id/btn0"/>
-
-    <Button
-        android:background="#4d4d4d"
-        android:layout_height="90dp"
-        android:layout_width="90dp"
-        android:textSize="30sp"
-        android:id="@+id/btnPlus"
-        android:text="+"
-        android:maxWidth="90dp"
-        android:onClick="onClickOperator"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/btn9"
-        android:layout_toRightOf="@+id/btn9"/>
-
-    <Button
-        android:background="#4d4d4d"
-        android:layout_height="90dp"
-        android:layout_width="90dp"
-        android:textSize="30sp"
-        android:id="@+id/btnMinus"
-        android:text="-"
-        android:onClick="onClickOperator"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/btnPlus"
-        android:layout_toRightOf="@+id/btn9"/>
-
-    <Button
-        android:background="#4d4d4d"
-        android:layout_height="90dp"
-        android:layout_width="90dp"
-        android:textSize="30sp"
-        android:id="@+id/btnMult"
-        android:text="x"
-        android:onClick="onClickOperator"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/btnMinus"
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
         android:layout_toRightOf="@+id/btn9"/>
 
     <Button
@@ -386,11 +252,7 @@
         android:text="÷"
         android:onClick="onClickOperator"
         android:textColor="#ffffff"
-<<<<<<< HEAD
         android:layout_below="@+id/btnMul"
-=======
-        android:layout_below="@+id/btnMult"
->>>>>>> 49b6a55cd69704f209bdbe800b8843d30ebb9dbe
         android:layout_toRightOf="@+id/btn9"/>
 
 </RelativeLayout>
