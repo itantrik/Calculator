@@ -35,7 +35,7 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
 
     }
 
-    public void onClick(View view) {
+    public void onClick (View view) {
         switch (view.getId()) {
             case R.id.btnAdd:
                 if(num.equals(functionResult)) {
