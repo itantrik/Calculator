@@ -5,12 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.*;
 
-public class BasicCalC extends AppCompatActivity implements View.OnClickListener {
+public class BasicCalC extends AppCompatActivity  {
 
     public Button btnAdd, btnSub, btnDiv, btnMul, btnRes, btnClear;
-    public TextView expression;
-    public EditText viewNum;
-    String num="0",exp="",functionResult="0";
+    public TextView expression, viewNum;
+    String num="0",exp="",display="",functionResult="0";
     int operator=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +25,18 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
         btnMul = (Button) findViewById(R.id.btnMul);
         btnRes = (Button) findViewById(R.id.btnRes);
         btnClear = (Button) findViewById(R.id.btnClear);
-        viewNum = (EditText) findViewById(R.id.viewNum);
+        viewNum = (TextView) findViewById(R.id.viewNum);
         expression = (TextView) findViewById(R.id.expression);
 
     }
 
     public void onClickNumber (View view) {
-
+        Button b = (Button) view;
+        display += b.getText().toString();
+        viewNum.setText(display);
     }
 
-    public void onClick (View view) {
+    public void onClickOperator (View view) {
         switch (view.getId()) {
             case R.id.btnAdd:
                 if(num.equals(functionResult)) {
@@ -46,6 +47,8 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 num = viewNum.getText().toString();
                 viewNum.setText("");
                 operator=1;
+                expression.setText(exp);
+                display="";
                 break;
             case R.id.btnSub:
                 if(num.equals(functionResult)) {
@@ -55,6 +58,8 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 exp=exp.concat(" - ");
                 num = viewNum.getText().toString();
                 viewNum.setText("");
+                expression.setText(exp);
+                display="";
                 operator=2;
                 break;
             case R.id.btnDiv:
@@ -65,6 +70,8 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 exp=exp.concat(" / ");
                 num = viewNum.getText().toString();
                 viewNum.setText("");
+                expression.setText(exp);
+                display="";
                 operator=4;
                 break;
             case R.id.btnMul:
@@ -75,6 +82,8 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 exp=exp.concat(" x ");
                 num = viewNum.getText().toString();
                 viewNum.setText("");
+                expression.setText(exp);
+                display="";
                 operator=3;
                 break;
             case R.id.btnRes:
@@ -102,11 +111,12 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                         break;
                 }
                 viewNum.setText(functionResult);
+                display="";
                 break;
             case R.id.btnClear:
-                viewNum.setText("");
-                expression.setText("");
-                exp="";
+                viewNum.setText("0");
+                expression.setText("00");
+                exp=display="";
                 num="0";
                 functionResult = "0";
                 break;
