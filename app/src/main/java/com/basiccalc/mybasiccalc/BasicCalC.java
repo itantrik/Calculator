@@ -35,10 +35,10 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
 
     }
 
-    public void onClickOperator(View view) {
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnAdd:
-                if(num==functionResult) {
+                if(num.equals(functionResult)) {
                     num = viewNum.getText().toString();
                     exp = exp.concat(num);
                 }
@@ -48,7 +48,7 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 operator=1;
                 break;
             case R.id.btnSub:
-                if(num==functionResult) {
+                if(num.equals(functionResult)) {
                     num = viewNum.getText().toString();
                     exp = exp.concat(num);
                 }
@@ -58,7 +58,7 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 operator=2;
                 break;
             case R.id.btnDiv:
-                if(num==functionResult) {
+                if(num.equals(functionResult)) {
                     num = viewNum.getText().toString();
                     exp = exp.concat(num);
                 }
@@ -68,7 +68,7 @@ public class BasicCalC extends AppCompatActivity implements View.OnClickListener
                 operator=4;
                 break;
             case R.id.btnMul:
-                if(num==functionResult) {
+                if(num.equals(functionResult)) {
                     num = viewNum.getText().toString();
                     exp = exp.concat(num);
                 }
