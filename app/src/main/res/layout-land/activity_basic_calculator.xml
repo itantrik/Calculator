@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/viewNum"
+        android:id="@+id/resultPane"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true" />
 
@@ -48,7 +48,7 @@
         android:id="@+id/textView3"
         android:textSize="20dp"
         android:textColor="#000000"
-        android:layout_below="@+id/viewNum"
+        android:layout_below="@+id/resultPane"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -57,7 +57,7 @@
         android:ems="10"
         android:id="@+id/viewNum2"
         android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/viewNum"
+        android:layout_alignStart="@+id/resultPane"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/expression"
+        android:id="@+id/expressionHistory"
         android:layout_centerVertical="true"
         android:layout_alignRight="@+id/btnMul"
         android:layout_alignEnd="@+id/btnMul"

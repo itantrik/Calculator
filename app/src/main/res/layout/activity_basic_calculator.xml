@@ -13,15 +13,15 @@
     tools:context="com.basiccalc.mybasiccalc.BasicCalC">
 
     <TextView
+        android:id="@+id/expressionHistory"
         android:background="#ffffff"
         android:layout_height="50dp"
         android:layout_width="fill_parent"
         android:maxLength="999"
         android:maxLines="2"
-        android:nestedScrollingEnabled="false"
+        android:nestedScrollingEnabled="true"
         android:textSize="20sp"
         android:gravity="bottom|right"
-        android:id="@+id/expression"
         android:text="00"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginLeft="0dp"
@@ -30,6 +30,7 @@
         android:layout_marginTop="0dp" />
 
     <TextView
+        android:id="@+id/resultPane"
         android:background="#ffffff"
         android:layout_height="85dp"
         android:layout_width="fill_parent"
@@ -38,7 +39,6 @@
         android:nestedScrollingEnabled="false"
         android:textSize="70sp"
         android:gravity="bottom|right"
-        android:id="@+id/viewNum"
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginLeft="0dp"
@@ -56,9 +56,9 @@
         android:maxWidth="90dp"
         android:onClick="onClickNumber"
         android:textColor="#ffffff"
-        android:layout_alignStart="@+id/viewNum"
-        android:layout_alignLeft="@+id/viewNum"
-        android:layout_below="@+id/viewNum"/>
+        android:layout_alignStart="@+id/resultPane"
+        android:layout_alignLeft="@+id/resultPane"
+        android:layout_below="@+id/resultPane"/>
 
     <Button
         android:background="#4d4d4d"
@@ -70,7 +70,7 @@
         android:maxWidth="90dp"
         android:onClick="onClickNumber"
         android:textColor="#ffffff"
-        android:layout_below="@+id/viewNum"
+        android:layout_below="@+id/resultPane"
         android:layout_toEndOf="@+id/btn7"
         android:layout_toRightOf="@+id/btn7"/>
 
@@ -84,7 +84,7 @@
         android:maxWidth="90dp"
         android:onClick="onClickNumber"
         android:textColor="#ffffff"
-        android:layout_below="@+id/viewNum"
+        android:layout_below="@+id/resultPane"
         android:layout_toEndOf="@+id/btn8"
         android:layout_toRightOf="@+id/btn8"/>
 
@@ -215,7 +215,7 @@
         android:maxWidth="90dp"
         android:onClick="onClickOperator"
         android:textColor="#ffffff"
-        android:layout_below="@+id/viewNum"
+        android:layout_below="@+id/resultPane"
         android:layout_toEndOf="@+id/btn9"
         android:layout_toRightOf="@+id/btn9"/>
 
