@@ -28,7 +28,7 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
         float firstNumber = 10;
         float secondNumber = 20;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
+        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
         solo.enterText(firstEditText , String.valueOf(firstNumber));
 
         EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
@@ -45,7 +45,7 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
         float firstNumber = 10;
         float secondNumber = 20;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
+        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
         solo.enterText(firstEditText , String.valueOf(firstNumber));
 
         EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
@@ -63,7 +63,7 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
         float firstNumber = 10;
         float secondNumber = 20;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
+        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
         solo.enterText(firstEditText , String.valueOf(firstNumber));
 
         EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
@@ -81,7 +81,7 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
         //float firstNumber = 10;
         //float secondNumber = 4;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
+        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
         solo.enterText(firstEditText , "10");
 
         EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
