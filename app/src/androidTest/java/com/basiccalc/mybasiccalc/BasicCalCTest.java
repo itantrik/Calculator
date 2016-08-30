@@ -27,16 +27,7 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
 
     public void testForAddition() {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         solo.unlockScreen();
-=======
-        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
-        solo.enterText(firstEditText , String.valueOf(firstNumber));
->>>>>>> a948118f2928e8e66e951c50611af434282e2870
-=======
-        solo.unlockScreen();
->>>>>>> local
 
         solo.clickOnView(solo.getView(R.id.btn1));
         solo.clickOnView(solo.getView(R.id.btn2));
@@ -57,10 +48,6 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
 
     public void testForSubtraction() {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> local
         solo.clickOnView(solo.getView(R.id.btn5));
         solo.clickOnView(solo.getView(R.id.btn6));
 
@@ -68,13 +55,6 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
 
         solo.clickOnView(solo.getView(R.id.btn7));
         solo.clickOnView(solo.getView(R.id.btn8));
-<<<<<<< HEAD
-=======
-        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
-        solo.enterText(firstEditText , String.valueOf(firstNumber));
->>>>>>> a948118f2928e8e66e951c50611af434282e2870
-=======
->>>>>>> local
 
         float num1=56, num2=78;
         float testResult = num1 - num2;
@@ -88,18 +68,8 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
 
     public void testForMultiplication() {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         solo.clickOnView(solo.getView(R.id.btn9));
         solo.clickOnView(solo.getView(R.id.btn0));
-=======
-        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
-        solo.enterText(firstEditText , String.valueOf(firstNumber));
->>>>>>> a948118f2928e8e66e951c50611af434282e2870
-=======
-        solo.clickOnView(solo.getView(R.id.btn9));
-        solo.clickOnView(solo.getView(R.id.btn0));
->>>>>>> local
 
         solo.clickOnView(solo.getView(R.id.btnMul));
 
@@ -121,18 +91,8 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
 
         solo.clickOnView(solo.getView(R.id.btnDiv));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         solo.clickOnView(solo.getView(R.id.btn8));
         solo.clickOnView(solo.getView(R.id.btn2));
-=======
-        EditText firstEditText = (EditText) solo.getView(R.id.resultPane);
-        solo.enterText(firstEditText , "10");
->>>>>>> a948118f2928e8e66e951c50611af434282e2870
-=======
-        solo.clickOnView(solo.getView(R.id.btn8));
-        solo.clickOnView(solo.getView(R.id.btn2));
->>>>>>> local
 
         float num1=46, num2=82;
         float testResult = num1 / num2;
