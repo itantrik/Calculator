@@ -3,6 +3,7 @@ package com.basiccalc.mybasiccalc;
 import android.test.ActivityInstrumentationTestCase2;
 //import android.test.suitebuilder.annotation.LargeTest;
 //import android.widget.Button;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -25,72 +26,80 @@ public class BasicCalCTest extends ActivityInstrumentationTestCase2<BasicCalC> {
     }
 
     public void testForAddition() {
-        float firstNumber = 10;
-        float secondNumber = 20;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
-        solo.enterText(firstEditText , String.valueOf(firstNumber));
+        solo.unlockScreen();
 
-        EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
-        solo.enterText(secondEditText , String.valueOf(secondNumber));
+        solo.clickOnView(solo.getView(R.id.btn1));
+        solo.clickOnView(solo.getView(R.id.btn2));
 
-        float testResult = firstNumber + secondNumber;
-        solo.clickOnButton("ADD");
+        solo.clickOnView(solo.getView(R.id.btnAdd));
 
-        TextView output = (TextView)solo.getView(R.id.result);
+        solo.clickOnView(solo.getView(R.id.btn3));
+        solo.clickOnView(solo.getView(R.id.btn4));
+
+        float num1=12, num2=34;
+        float testResult = num1 + num2;
+
+        solo.clickOnButton("=");
+
+        TextView output = (TextView)solo.getView(R.id.viewNum);
         assertEquals(String.valueOf(testResult),output.getText().toString());
     }
 
     public void testForSubtraction() {
-        float firstNumber = 10;
-        float secondNumber = 20;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
-        solo.enterText(firstEditText , String.valueOf(firstNumber));
+        solo.clickOnView(solo.getView(R.id.btn5));
+        solo.clickOnView(solo.getView(R.id.btn6));
 
-        EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
-        solo.enterText(secondEditText , String.valueOf(secondNumber));
+        solo.clickOnView(solo.getView(R.id.btnSub));
 
-        float testResult = firstNumber - secondNumber;
-        solo.clickOnButton("SUB");
+        solo.clickOnView(solo.getView(R.id.btn7));
+        solo.clickOnView(solo.getView(R.id.btn8));
 
-        TextView output = (TextView)solo.getView(R.id.result);
+        float num1=56, num2=78;
+        float testResult = num1 - num2;
+
+        solo.clickOnButton("=");
+
+        TextView output = (TextView)solo.getView(R.id.viewNum);
         assertEquals(String.valueOf(testResult),output.getText().toString());
 
     }
 
     public void testForMultiplication() {
-        float firstNumber = 10;
-        float secondNumber = 20;
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
-        solo.enterText(firstEditText , String.valueOf(firstNumber));
+        solo.clickOnView(solo.getView(R.id.btn9));
+        solo.clickOnView(solo.getView(R.id.btn0));
 
-        EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
-        solo.enterText(secondEditText , String.valueOf(secondNumber));
+        solo.clickOnView(solo.getView(R.id.btnMul));
 
-        float testResult = firstNumber * secondNumber;
-        solo.clickOnButton("MUL");
+        solo.clickOnView(solo.getView(R.id.btn1));
+        solo.clickOnView(solo.getView(R.id.btn8));
 
-        TextView output = (TextView)solo.getView(R.id.result);
+        float num1=90, num2=18;
+        float testResult = num1 * num2;
+
+        solo.clickOnButton("=");
+
+        TextView output = (TextView)solo.getView(R.id.viewNum);
         assertEquals(String.valueOf(testResult),output.getText().toString());
-
     }
 
     public void testForDivision() {
-        //float firstNumber = 10;
-        //float secondNumber = 4;
+        solo.clickOnView(solo.getView(R.id.btn4));
+        solo.clickOnView(solo.getView(R.id.btn6));
 
-        EditText firstEditText = (EditText) solo.getView(R.id.viewNum);
-        solo.enterText(firstEditText , "10");
+        solo.clickOnView(solo.getView(R.id.btnDiv));
 
-        EditText secondEditText = (EditText) solo.getView(R.id.viewNum2);
-        solo.enterText(secondEditText , "20");
+        solo.clickOnView(solo.getView(R.id.btn8));
+        solo.clickOnView(solo.getView(R.id.btn2));
 
-        double testResult = 10.0 / 20.0;
-        solo.clickOnButton("DIV");
+        float num1=46, num2=82;
+        float testResult = num1 / num2;
 
-        TextView output = (TextView)solo.getView(R.id.result);
+        solo.clickOnButton("=");
+
+        TextView output = (TextView)solo.getView(R.id.viewNum);
         assertEquals(String.valueOf(testResult),output.getText().toString());
 
     }

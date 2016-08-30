@@ -2,124 +2,115 @@ package com.basiccalc.mybasiccalc;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class BasicCalC extends AppCompatActivity  {
+import java.util.regex.Pattern;
 
-    public Button btnAdd, btnSub, btnDiv, btnMul, btnRes, btnClear;
-    public TextView expression, viewNum;
-    String num="0",exp="",display="",functionResult="0";
-    int operator=0;
+public class BasicCalC extends AppCompatActivity {
+    private TextView viewNum;
+    private String display = "";
+    private String currentOperator = "";
+    private String result = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_calculator);
-        init();
-    }
-
-    private void init() {
-        btnAdd = (Button) findViewById(R.id.btnAdd);
-        btnSub = (Button) findViewById(R.id.btnSub);
-        btnDiv = (Button) findViewById(R.id.btnDiv);
-        btnMul = (Button) findViewById(R.id.btnMul);
-        btnRes = (Button) findViewById(R.id.btnRes);
-        btnClear = (Button) findViewById(R.id.btnClear);
-        viewNum = (TextView) findViewById(R.id.viewNum);
-        expression = (TextView) findViewById(R.id.expression);
-
-    }
-
-    public void onClickNumber (View view) {
-        Button b = (Button) view;
-        display += b.getText().toString();
+        viewNum = (TextView)findViewById(R.id.viewNum);
         viewNum.setText(display);
     }
 
-    public void onClickOperator (View view) {
-        switch (view.getId()) {
-            case R.id.btnAdd:
-                if(num.equals(functionResult)) {
-                    num = viewNum.getText().toString();
-                    exp = exp.concat(num);
-                }
-                exp=exp.concat(" + ");
-                num = viewNum.getText().toString();
-                viewNum.setText("");
-                operator=1;
-                expression.setText(exp);
-                display="";
-                break;
-            case R.id.btnSub:
-                if(num.equals(functionResult)) {
-                    num = viewNum.getText().toString();
-                    exp = exp.concat(num);
-                }
-                exp=exp.concat(" - ");
-                num = viewNum.getText().toString();
-                viewNum.setText("");
-                expression.setText(exp);
-                display="";
-                operator=2;
-                break;
-            case R.id.btnDiv:
-                if(num.equals(functionResult)) {
-                    num = viewNum.getText().toString();
-                    exp = exp.concat(num);
-                }
-                exp=exp.concat(" / ");
-                num = viewNum.getText().toString();
-                viewNum.setText("");
-                expression.setText(exp);
-                display="";
-                operator=4;
-                break;
-            case R.id.btnMul:
-                if(num.equals(functionResult)) {
-                    num = viewNum.getText().toString();
-                    exp = exp.concat(num);
-                }
-                exp=exp.concat(" x ");
-                num = viewNum.getText().toString();
-                viewNum.setText("");
-                expression.setText(exp);
-                display="";
-                operator=3;
-                break;
-            case R.id.btnRes:
-                functionResult = viewNum.getText().toString();
-                switch (operator) {
-                    case 1:
-                        exp=exp.concat(String.valueOf(functionResult));
-                        expression.setText(exp);
-                        functionResult = String.valueOf(Float.parseFloat(num) + Float.parseFloat(functionResult));
-                        break;
-                    case 2:
-                        exp=exp.concat(String.valueOf(functionResult));
-                        expression.setText(exp);
-                        functionResult = String.valueOf(Float.parseFloat(num) - Float.parseFloat(functionResult));
-                        break;
-                    case 3:
-                        exp=exp.concat(String.valueOf(functionResult));
-                        expression.setText(exp);
-                        functionResult = String.valueOf(Float.parseFloat(num) * Float.parseFloat(functionResult));
-                        break;
-                    case 4:
-                        exp=exp.concat(String.valueOf(functionResult));
-                        expression.setText(exp);
-                        functionResult = String.valueOf(Float.parseFloat(num) / Float.parseFloat(functionResult));
-                        break;
-                }
-                viewNum.setText(functionResult);
-                display="";
-                break;
-            case R.id.btnClear:
-                viewNum.setText("0");
-                expression.setText("00");
-                exp=display="";
-                num="0";
-                functionResult = "0";
-                break;
+    private void updateScreen(){
+        viewNum.setText(display);
+    }
+
+    public void onClickNumber(View v){
+        if(result != ""){
+            clear();
+            updateScreen();
         }
+        Button b = (Button) v;
+        display += b.getText();
+        updateScreen();
+    }
+
+    private boolean isOperator(char op){
+        switch (op){
+            case '+':
+            case '-':
+            case 'x':
+            case '÷':return true;
+            default: return false;
+        }
+    }
+
+    public void onClickOperator(View v){
+        if(display == "") return;
+
+        Button b = (Button)v;
+
+        if(result != ""){
+            String _display = result;
+            clear();
+            display = _display;
+        }
+
+        if(currentOperator != ""){
+            Log.d("CalcX", ""+display.charAt(display.length()-1));
+            if(isOperator(display.charAt(display.length()-1))){
+                display = display.replace(display.charAt(display.length()-1), b.getText().charAt(0));
+                updateScreen();
+                return;
+            }else{
+                getResult();
+                display = result;
+                result = "";
+            }
+            currentOperator = b.getText().toString();
+        }
+        display += b.getText();
+        currentOperator = b.getText().toString();
+        updateScreen();
+    }
+
+    private void clear(){
+        display = "";
+        currentOperator = "";
+        result = "";
+    }
+
+    public void onClickClear(View v){
+        clear();
+        updateScreen();
+    }
+
+    private double operate(String a, String b, String op){
+        switch (op){
+            case "+": return Double.valueOf(a) + Double.valueOf(b);
+            case "-": return Double.valueOf(a) - Double.valueOf(b);
+            case "x": return Double.valueOf(a) * Double.valueOf(b);
+            case "÷": try{
+                return Double.valueOf(a) / Double.valueOf(b);
+            }catch (Exception e){
+                Log.d("Calc", e.getMessage());
+            }
+            default: return -1;
+        }
+    }
+
+    private boolean getResult(){
+        if(currentOperator == "") return false;
+        String[] operation = display.split(Pattern.quote(currentOperator));
+        if(operation.length < 2) return false;
+        result = String.valueOf(operate(operation[0], operation[1], currentOperator));
+        return true;
+    }
+
+    public void onClickEqual(View v){
+        if(display == "") return;
+        if(!getResult()) return;
+        viewNum.setText(display + "\n" + String.valueOf(result));
     }
 }
